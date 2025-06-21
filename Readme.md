@@ -711,11 +711,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-## 🏆 Awards & Recognition
-
-- **🥇 Best AI Innovation**: Hacktron 2025 Competition
-- **⭐ Featured Project**: Azure AI Showcase
-- **🚀 Trending Repository**: GitHub Trending (AI/ML category)
 
 ---
 
