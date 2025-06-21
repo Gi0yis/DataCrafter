@@ -1,0 +1,131 @@
+{
+  "metrics": {
+    "metrics": {
+      "processedDocuments": 5,
+      "pendingDocuments": 2,
+      "totalChunks": 45,
+      "errorRate": 2.5,
+      "totalDocuments": 7,
+      "lastUpdated": "2025-01-21T03:30:00.000Z",
+      "operationsCount": 40,
+      "errorsCount": 1
+    },
+    "documentHistory": [
+      {
+        "file_name": "documento_ejemplo.pdf",
+        "blob_name": "abc123def456.pdf",
+        "type": "pdf",
+        "size": 1048576,
+        "status": "processed",
+        "num_chunks": 8,
+        "timestamp": "2025-01-21T03:25:00.000Z",
+        "processing_date": "2025-01-21T03:25:00.000Z",
+        "id": 1737426300000
+      },
+      {
+        "file_name": "imagen_ejemplo.jpg",
+        "blob_name": "def456ghi789.jpg",
+        "type": "image",
+        "size": 524288,
+        "status": "processed",
+        "num_chunks": 3,
+        "timestamp": "2025-01-21T03:20:00.000Z",
+        "processing_date": "2025-01-21T03:20:00.000Z",
+        "id": 1737426000000
+      }
+    ],
+    "recentDocuments": [
+      {
+        "file_name": "documento_ejemplo.pdf",
+        "blob_name": "abc123def456.pdf",
+        "type": "pdf",
+        "size": 1048576,
+        "status": "processed",
+        "num_chunks": 8,
+        "timestamp": "2025-01-21T03:25:00.000Z",
+        "processing_date": "2025-01-21T03:25:00.000Z",
+        "id": 1737426300000
+      },
+      {
+        "file_name": "imagen_ejemplo.jpg",
+        "blob_name": "def456ghi789.jpg",
+        "type": "image",
+        "size": 524288,
+        "status": "processed",
+        "num_chunks": 3,
+        "timestamp": "2025-01-21T03:20:00.000Z",
+        "processing_date": "2025-01-21T03:20:00.000Z",
+        "id": 1737426000000
+      }
+    ],
+    "analytics": {
+      "documentTypes": {
+        "pdf": 3,
+        "image": 2,
+        "text": 1,
+        "other": 1
+      },
+      "processingStats": {
+        "averageProcessingTime": 2.5,
+        "totalProcessingTime": 15.0,
+        "successfulOperations": 6,
+        "failedOperations": 1
+      },
+      "performance": {
+        "uploadsToday": 3,
+        "queriesProcessed": 25,
+        "systemUptime": 86400
+      }
+    }
+  },
+  "dashboard": {
+    "headers": {
+      "mainTitle": "Dashboard",
+      "subtitle": "Bienvenido a DataCrafter. Gestiona y consulta tus documentos de manera inteligente.",
+      "quickActionsTitle": "Acciones Rápidas",
+      "recentDocumentsTitle": "Documentos Recientes",
+      "lastUpdated": "2025-01-21T03:30:00.000Z"
+    },
+    "quickActions": [
+      {
+        "title": "Consultar Documentos",
+        "description": "Haz preguntas sobre tus documentos",
+        "icon": "Brain",
+        "path": "/query",
+        "color": "bg-blue-500",
+        "enabled": true
+      },
+      {
+        "title": "Subir Documentos",
+        "description": "Agrega nuevos documentos al sistema",
+        "icon": "Upload",
+        "path": "/upload",
+        "color": "bg-green-500",
+        "enabled": true
+      },
+      {
+        "title": "Ver Analytics",
+        "description": "Analiza el rendimiento del sistema",
+        "icon": "BarChart3",
+        "path": "/analytics",
+        "color": "bg-purple-500",
+        "enabled": true
+      }
+    ],
+    "notifications": [
+      {
+        "id": 1737426300001,
+        "timestamp": "2025-01-21T03:30:00.000Z",
+        "type": "success",
+        "title": "Documento procesado",
+        "message": "documento_ejemplo.pdf ha sido procesado exitosamente"
+      }
+    ],
+    "systemStatus": {
+      "status": "active",
+      "message": "Sistema operativo",
+      "lastCheck": "2025-01-21T03:30:00.000Z"
+    }
+  },
+  "exportDate": "2025-01-21T03:30:00.000Z"
+} 

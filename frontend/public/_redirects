@@ -1,0 +1,14 @@
+# Redirects para Single Page Application (SPA)
+# Todas las rutas que no sean archivos estáticos deben ir a index.html
+/*    /index.html   200
+
+# Redirects específicos para API (opcional)
+/api/*  https://2eb9-172-173-216-155.ngrok-free.app/:splat  200
+
+# Redirects para archivos estáticos (opcional)
+/assets/*  /assets/:splat  200
+
+# Headers para CORS (si es necesario)
+/api/*
+  Access-Control-Allow-Origin: *
+  Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS 

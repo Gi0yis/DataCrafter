@@ -1,0 +1,77 @@
+[build]
+  # Directorio donde se ejecuta el build
+  base = "frontend/"
+  
+  # Comando para construir la aplicación
+  command = "npm run build"
+  
+  # Directorio donde están los archivos construidos
+  publish = "dist/"
+
+[build.environment]
+  # Versión de Node.js
+  NODE_VERSION = "18"
+
+# Configuración de redirects para SPA (Single Page Application)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Headers para mejorar seguridad y rendimiento
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://2eb9-172-173-216-155.ngrok-free.app https://agent-document.cognitiveservices.azure.com https://azureopenai-craft.openai.azure.com;"
+
+# Headers específicos para archivos estáticos
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Headers para archivos JavaScript y CSS
+[[headers]]
+  for = "*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Configuración para Edge Functions (si es necesario)
+[functions]
+  # Directorio de las funciones
+  directory = "netlify/functions"
+  
+# Configuración de plugins
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+# Configuración de Forms (si usas Netlify Forms)
+[build.processing]
+  skip_processing = false
+[build.processing.css]
+  bundle = true
+  minify = true
+[build.processing.js]
+  bundle = true
+  minify = true
+[build.processing.html]
+  pretty_urls = true
+
+# Configuración simplificada - todas las claves están en el código
+[context.production.environment]
+  NODE_ENV = "production"
+
+[context.deploy-preview.environment]
+  NODE_ENV = "development"
+
+[context.branch-deploy.environment]
+  NODE_ENV = "development" 
