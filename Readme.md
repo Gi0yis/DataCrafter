@@ -21,6 +21,8 @@ Forget about manually searching through hundreds of pages: ask in natural langua
 - **🔗 REST API**: Easy integration with existing systems
 - **🌐 Modern Web Interface**: Intuitive React-based frontend
 - **🔒 Enterprise Security**: Azure-powered secure infrastructure
+- **🤖 Azure AI Foundry Integration**: Advanced AI assistant with custom instructions
+- **🎭 Dual Architecture**: Frontend-driven processing and traditional backend support
 
 ---
 
@@ -60,6 +62,158 @@ Forget about manually searching through hundreds of pages: ask in natural langua
 
 ---
 
+## 🏗️ Revolutionary Hybrid Architecture
+
+### 🌟 **Azure AI Foundry Integration**
+
+DataCrafter utilizes Azure AI Foundry (formerly Azure OpenAI Studio) to create a sophisticated AI assistant ecosystem. This integration represents a paradigm shift where the frontend application directly leverages Azure AI services, creating a hybrid architecture that combines traditional backend processing with advanced AI capabilities.
+
+> **Azure AI Foundry Integration**: DataCrafter leverages Azure AI Foundry's Assistants playground to create specialized AI assistants with custom instructions, enabling domain-specific knowledge processing and multilingual support.
+
+#### **🤖 AI Assistant "ViVi" Configuration**
+
+Our custom AI assistant "ViVi" is configured in Azure AI Foundry with:
+
+- **Model**: GPT-4o-mini (version 2024-07-18)
+- **Assistant ID**: `asst_aMPAuhxQ98TY2mwt5vnIxT9J`
+- **Specialized Instructions**: Custom prompts for document analysis and health-related content
+- **Multi-language Support**: Spanish and English processing capabilities
+- **Domain Expertise**: Specialized in medical documentation, educational policies, and compliance
+
+#### **📋 Custom System Instructions**
+
+The assistant is configured with specialized instructions for:
+
+```
+Chronic diseases not transmissible like diabetes and hypertension.
+
+Chapter 3: Educational Policies - In this aspect, we highlight the budget increase in education to improve early childhood development and reduce learning gaps...
+```
+
+This allows the assistant to understand context-specific information and provide accurate responses in specialized domains.
+
+### 🏛️ Architecture Components
+
+#### **Frontend Layer (React + Azure AI Direct Integration)**
+- **React Application**: Modern, responsive user interface
+- **State Management**: Efficient state handling with React Context
+- **Real-time Updates**: Live progress tracking and notifications
+- **Interactive Tutorials**: Built-in user guidance system
+- **Azure AI Direct Calls**: Direct integration with Azure AI Foundry
+- **Client-side Processing**: Advanced document processing in the browser
+
+#### **Azure AI Foundry Layer**
+- **AI Assistant Management**: Custom assistant configuration and deployment
+- **Conversation Threading**: Maintain context across multiple interactions
+- **File Processing**: Direct file uploads and processing through Azure
+- **Custom Instructions**: Specialized prompts for different domains
+- **Token Management**: Efficient token usage and conversation optimization
+
+#### **API Layer (Flask Backend - Optional)**
+- **Flask REST API**: Lightweight, high-performance backend
+- **Authentication**: Secure API access control
+- **Rate Limiting**: Protect against abuse and ensure fair usage
+- **Error Handling**: Comprehensive error reporting and recovery
+- **Legacy Support**: Support for traditional backend processing
+
+#### **Processing Engine (Hybrid Implementation)**
+- **Browser-based Processing**: Advanced document analysis in the frontend
+- **Azure Document Intelligence**: Direct OCR and layout analysis
+- **Chunking Engine**: Intelligent text segmentation
+- **Embedding Pipeline**: Vector generation and optimization
+- **Quality Assurance**: Automated quality checks and validation
+
+#### **Azure Services Integration**
+- **Document Intelligence**: OCR and document analysis
+- **OpenAI Service**: Embedding generation and chat completions
+- **AI Foundry Assistants**: Advanced conversational AI with custom instructions
+- **Cognitive Search**: Vector indexing and similarity search
+- **Storage**: Secure document and metadata storage
+
+---
+
+## 🎯 Frontend-as-Backend Innovation
+
+### 💡 **Paradigm Shift**
+
+DataCrafter introduces an innovative architecture where the React frontend acts as both user interface and processing engine, directly communicating with Azure AI services. This eliminates traditional backend dependencies for many operations while maintaining enterprise-grade capabilities.
+
+#### **🔄 Dual Processing Modes**
+
+**1. Frontend-Direct Mode (Primary)**
+```javascript
+// Direct Azure AI Foundry integration
+export const azureAssistantService = {
+  chat: async (message) => {
+    const response = await fetch(`${AZURE_AI_ENDPOINT}/azure-assistant`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message })
+    });
+    return await response.json();
+  },
+
+  uploadAndProcess: async (file) => {
+    const formData = new FormData();
+    formData.append('file', file);
+    // Direct file processing through Azure
+    return await fetch(`${AZURE_AI_ENDPOINT}/upload`, {
+      method: 'POST',
+      body: formData
+    });
+  }
+};
+```
+
+**2. Traditional Backend Mode (Fallback)**
+```javascript
+// Traditional API calls to Flask backend
+export const apiService = {
+  query: async (question) => {
+    return await api.post('/query', { question });
+  },
+  
+  upload: async (file) => {
+    const formData = new FormData();
+    formData.append('file', file);
+    return await api.post('/upload', formData);
+  }
+};
+```
+
+### 🔧 **Technical Implementation Details**
+
+#### **Client-Side Document Processing**
+```javascript
+class DataCrafterService {
+  async processDocument(file, customPrompt = '') {
+    // Advanced chunking strategy
+    const maxChunkSize = 12000;
+    const chunks = this.splitIntoChunks(fileContent, maxChunkSize);
+    
+    // Process each chunk with Azure AI
+    for (let chunk of chunks) {
+      const response = await client.chat.completions.create({
+        messages: [
+          { role: 'system', content: DATACRAFTER_PROMPT },
+          { role: 'user', content: chunk }
+        ],
+        temperature: 0.3,
+        max_tokens: 4000,
+      });
+    }
+  }
+}
+```
+
+#### **Advanced Metrics and Analytics**
+- **Real-time Processing Metrics**: Track processing speed, accuracy, and throughput
+- **Usage Analytics**: Monitor user behavior and system performance
+- **Cost Optimization**: Track Azure service usage and optimize token consumption
+- **Quality Assurance**: Automated quality scoring and validation
+
+---
+
 ## 🌟 Why will you love it?
 
 ### 💼 Business Benefits
@@ -77,6 +231,8 @@ Forget about manually searching through hundreds of pages: ask in natural langua
 - **🌐 Cloud-Native**: Leverage Azure's global infrastructure and reliability
 - **🔌 API-First Design**: Easy integration with existing systems and workflows
 - **📱 Multi-Platform**: Works across web, mobile, and desktop applications
+- **⚡ Reduced Latency**: Direct Azure integration eliminates middleware bottlenecks
+- **💰 Cost Efficiency**: Optimized token usage and reduced infrastructure costs
 
 ### 🎨 User Experience Benefits
 - **🖱️ Intuitive Interface**: Clean, modern web interface requiring no training
@@ -85,6 +241,7 @@ Forget about manually searching through hundreds of pages: ask in natural langua
 - **⚡ Instant Results**: Get answers in seconds, not hours
 - **📊 Visual Analytics**: Track usage patterns and document insights
 - **🔄 Continuous Learning**: System improves with usage and feedback
+- **🌍 Offline Capability**: Process documents locally when needed
 
 ---
 
@@ -144,12 +301,88 @@ DataCrafter/
 ├── frontend/                   # React frontend application
 │   ├── src/
 │   │   ├── components/        # React components
+│   │   │   ├── DataVisualization.jsx
+│   │   │   ├── InteractiveTutorial.jsx
+│   │   │   ├── Navbar.jsx
+│   │   │   └── TutorialButton.jsx
 │   │   ├── pages/             # Application pages
+│   │   │   ├── AnalyticsPage.jsx
+│   │   │   ├── Dashboard.jsx
+│   │   │   ├── QueryPage.jsx
+│   │   │   └── UploadPage.jsx
 │   │   ├── services/          # API and Azure services
-│   │   └── contexts/          # React contexts
+│   │   │   ├── api.js         # Backend API integration
+│   │   │   ├── azureOpenAI.js # Azure AI Foundry integration
+│   │   │   ├── documentIntelligence.js
+│   │   │   └── persistence.js # Data persistence
+│   │   ├── contexts/          # React contexts
+│   │   │   └── TutorialContext.jsx
+│   │   ├── hooks/             # Custom React hooks
+│   │   │   └── usePersistence.js
+│   │   └── data/              # Configuration data
+│   │       └── tutorialSteps.js
 │   ├── public/                # Static assets
+│   │   ├── datacrafter_example.json
+│   │   └── vite.svg
 │   └── package.json           # Frontend dependencies
+├── img/                       # Documentation images
+│   ├── Arquitectura.png       # System architecture diagram
+│   └── logoAZC.png           # Project logo
 └── .env                       # Environment variables (do not version)
+```
+
+### 🔧 **Key Service Files**
+
+#### **azureOpenAI.js** - Azure AI Foundry Integration
+```javascript
+// Advanced AI service with hybrid processing
+class DataCrafterService {
+  async processDocument(file, customPrompt = '') {
+    // Intelligent chunking and processing
+    const chunks = this.splitIntoChunks(fileContent, maxChunkSize);
+    
+    // Process with Azure AI Foundry assistant
+    for (let chunk of chunks) {
+      const response = await client.chat.completions.create({
+        messages: [
+          { role: 'system', content: DATACRAFTER_PROMPT },
+          { role: 'user', content: chunk }
+        ]
+      });
+    }
+  }
+
+  async chatWithAssistant(message) {
+    // Direct Azure AI communication
+    return await client.chat.completions.create({
+      messages: [{ role: 'user', content: message }]
+    });
+  }
+}
+```
+
+#### **api.js** - Backend Integration
+```javascript
+// Azure Assistant services
+export const azureAssistantService = {
+  chat: async (message) => {
+    const response = await fetch(`${API_BASE_URL}/azure-assistant`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message })
+    });
+    return await response.json();
+  },
+
+  uploadAndProcess: async (file) => {
+    const formData = new FormData();
+    formData.append('file', file);
+    return await fetch(`${API_BASE_URL}/azure-assistant/upload`, {
+      method: 'POST',
+      body: formData
+    });
+  }
+};
 ```
 
 ---
@@ -163,6 +396,7 @@ DataCrafter/
   - Azure Document Intelligence
   - Azure OpenAI Service
   - Azure Cognitive Search
+  - Azure AI Foundry (for advanced assistant features)
 
 ### 🚀 Quick Start
 
@@ -243,7 +477,39 @@ VITE_AZURE_OPENAI_ENDPOINT=your_endpoint_here
 VITE_AZURE_OPENAI_KEY=your_key_here
 VITE_AZURE_DOC_INTELLIGENCE_ENDPOINT=your_endpoint_here
 VITE_AZURE_DOC_INTELLIGENCE_KEY=your_key_here
+
+# Azure AI Foundry Assistant Configuration
+VITE_AZURE_ASSISTANT_ID=asst_aMPAuhxQ98TY2mwt5vnIxT9J
+VITE_AZURE_ASSISTANT_NAME=ViVi
+VITE_AZURE_FOUNDRY_ENDPOINT=https://azureopenai-craft.openai.azure.com/
 ```
+
+### 🤖 **Azure AI Foundry Setup**
+
+1. **Access Azure AI Foundry**
+   - Navigate to [Azure AI Foundry](https://ai.azure.com)
+   - Select your OpenAI resource: `azureopenai-craft`
+
+2. **Create Your Assistant**
+   - Go to "Assistants playground"
+   - Click "New assistant"
+   - Configure with your specific instructions
+   - Deploy with model `gpt-4o-mini`
+
+3. **Configure Instructions**
+   ```
+   You are DataCrafter AI, specialized in processing and analyzing documents.
+   Focus on:
+   - Medical and health-related content
+   - Educational policies and compliance
+   - Multilingual support (Spanish/English)
+   - Accurate data extraction and structuring
+   ```
+
+4. **Test and Deploy**
+   - Test in the playground
+   - Note your Assistant ID
+   - Update your environment variables
 
 ---
 
@@ -337,7 +603,7 @@ VITE_AZURE_DOC_INTELLIGENCE_KEY=your_key_here
 - **Data Sovereignty**: Keep data in specific geographic regions
 - **Compliance Standards**: SOC 2, ISO 27001, GDPR, HIPAA compliance
 
-### �� Privacy Protection
+### 🔐 Privacy Protection
 - **Data Isolation**: Each organization's data is completely isolated
 - **Retention Policies**: Configurable data retention and deletion policies
 - **User Consent**: Explicit consent mechanisms for data processing
@@ -412,6 +678,7 @@ You're welcome! Here's how you can get involved:
 ### 🔗 Useful Links
 - **[Azure Document Intelligence](https://azure.microsoft.com/en-us/services/form-recognizer/)**
 - **[Azure OpenAI Service](https://azure.microsoft.com/en-us/services/openai/)**
+- **[Azure AI Foundry](https://ai.azure.com)**: Create and manage AI assistants
 - **[Azure Cognitive Search](https://azure.microsoft.com/en-us/services/search/)**
 - **[React Documentation](https://reactjs.org/docs/)**
 - **[Flask Documentation](https://flask.palletsprojects.com/)**
